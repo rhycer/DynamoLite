@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,13 +10,27 @@ namespace DynamoLiteApp
 {
     class Program
     {
+        private Program() { }
+
+
         static void Main(string[] args)
         {
-            var theTable = new SurfaceArea();
-            theTable.Show();
+            new Program().StartAndLoop();
+
+
+
+        }
+
+
+
+
+        private void StartAndLoop() {
+            var surfaceArea = new SurfaceArea();
+            var surfaceAreaThread = new Thread(() => Application.Run(surfaceArea));
+            surfaceAreaThread.Start();
 
             var stayAlive = true;
-            do
+            while (stayAlive)
             {
                 Console.WriteLine("<==== waiting for next command.");
                 var input = Console.ReadLine();
@@ -26,20 +41,18 @@ namespace DynamoLiteApp
                         break;
                     case "xXx":
                         Console.WriteLine("exit command recieved.  please press <enter> to continue;");
-                        Console.ReadLine();
                         stayAlive = false;
+                        Console.ReadLine();
                         break;
                     default:
-                        
+
                         break;
                 }
+            }
 
-
-            } while (stayAlive);
+            Action shutDown = () => surfaceArea.Dispose();
+            surfaceArea.Invoke(shutDown);
 
         }
-
-
-
     }
 }
