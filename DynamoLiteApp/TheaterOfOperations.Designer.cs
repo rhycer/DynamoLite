@@ -1,6 +1,6 @@
 ﻿namespace DynamoLiteApp
 {
-    partial class SurfaceArea
+    partial class TheaterOfOperations
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // TheaterOfOperations
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(842, 585);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "TheaterOfOperations";
             this.Text = "SurfaceArea";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

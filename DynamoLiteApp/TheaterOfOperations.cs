@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace DynamoLiteApp
 {
-    public partial class SurfaceArea : Form
+    public partial class TheaterOfOperations : Form
     {
-        public SurfaceArea()
+        public TheaterOfOperations(ref CommandRouter cr)
         {
             InitializeComponent();
         }
+
     }
 }
