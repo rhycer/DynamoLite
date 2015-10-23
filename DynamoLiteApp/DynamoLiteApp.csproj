@@ -50,6 +50,7 @@
     <Compile Include="Participant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouterCommand.cs" />
     <Compile Include="TheaterOfOperations.cs">
       <SubType>Form</SubType>
     </Compile>

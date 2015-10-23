@@ -8,7 +8,18 @@ namespace DynamoLiteApp
 {
     public static class Extensions
     {
-
+        public static int? IntFromString(this string str)
+        {
+            try
+            {
+                int result = System.Convert.ToInt32(str);
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 
     public static class Helpers
